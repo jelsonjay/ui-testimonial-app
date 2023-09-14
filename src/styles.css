@@ -1,0 +1,227 @@
+/* Import Google Font - Lato */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+/*=========VARIABLES CSS=========*/
+:root {
+  --header-height: 5rem;
+  /*=========COLORS=========*/
+  --bg: #e4e9f7;
+  --bg-color: hsl(200, 75%, 14%);
+  --text-color: "";
+  --title-color: hsl(219, 17%, 24%);
+  --primary: hsl(186, 67%, 28%);
+  --body-color: hsl(36, 11%, 91%);
+  --boxShadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12);
+  --container-color: hsla(0, 0%, 0%, 0.7);
+  --white: hsl(0, 0%, 100%);
+
+  /*=========FONT AND TYPOGRAPHY=========*/
+  --f-family: "Lato", sans-serif;
+  --bigger-fontSize: 3.25rem;
+  --h1-fontSize: 1.75rem;
+  --h2-fontSize: 1.25rem;
+  --h3-fontSize: 1.3rem;
+  --h4-fontSize: 1.2rem;
+  --h5-fontSize: 1.1rem;
+  --h6-fontSize: 1rem;
+  --normal-fontSize: 0.938rem;
+  --small-fontSize: 0.813rem;
+  --smaller-fontSize: 0.75rem;
+
+  /*=========FONT WEIGHT=========*/
+  --fontWeight-normal-300: 300;
+  --fontWeight-regular-400: 400;
+  --fontWeight-medium-500: 500;
+  --fontWeight-semiBold-600: 600;
+  --fontWeight-bold-600: 700;
+  --fontWeight-bolder-900: 900;
+
+  /*=========Z INDEX=========*/
+  --z-fixed: 100;
+  --z-tooltip: 10;
+
+  /*------TRANSITIONS-------*/
+  --trans2: all 0.2s ease;
+  --trans3: all 0.3s ease;
+  --trans4: all 0.4s ease;
+  --trans5: all 0.5s ease;
+}
+
+/*=========RESPONSIVE=========*/
+@media (min-width: 1124px) {
+  :root {
+    /*=========FONT WEIGHT=========*/
+    --bigger-fontSize: 4.5rem;
+    --h1-fontSize: 2.75rem;
+    --h2-fontSize: 2.2rem;
+    --h3-fontSize: 1.256rem;
+    --h4-fontSize: 1.25rem;
+    --h5-fontSize: 1.2rem;
+    --h6-fontSize: 1rem;
+  }
+}
+
+/*=========BASE========*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--f-family);
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--fontWeight-medium-500);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=========REUSABLE CSS CLASSES =========*/
+.container {
+  max-width: 1042px;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.section {
+  padding: 4.5rem 0 2rem;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: var(--h1-fontSize);
+  color: #e4e9f7;
+}
+.main {
+  overflow: hidden;
+}
+/*=========Testimonial=========*/
+.testimonial-container {
+  background-color: hsl(219, 17%, 24%);
+  width: 100%;
+  height: 100vh;
+}
+
+.slide-row {
+  display: flex;
+  width: 3200px;
+  transition: 0.45s;
+}
+.slide-card {
+  display: flex;
+  width: 800px;
+  height: 400px;
+  position: relative;
+}
+.user-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20rem;
+}
+.user-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.625rem;
+  object-fit: cover;
+}
+.user-content {
+  background-color: crimson;
+  width: 550px;
+  height: 250px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-radius: 0.625rem;
+  padding: 2.3rem;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+  z-index: 2;
+}
+.user-content h3 {
+  margin: 2rem 0;
+  color: #e4e9f7;
+  font-size: 1.2em;
+  font-weight: var(--fontWeight-bold-600);
+}
+.user-content p {
+  color: #e4e9f7;
+  font-size: 1.2em;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+.user-content span {
+  color: #e4e9f7;
+  font-size: 1.2em;
+}
+
+.wrap {
+  position: absolute;
+  width: 800px;
+  height: 400px;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+/*----INDICATE-------*/
+.indicater {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50px;
+}
+.btn-slide {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+  border-radius: 15px;
+  background-color: #e4e9f7;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.active {
+  width: 45px;
+}
+
+.testimonial {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*========RESPONSIVE==========*/
+@media (max-width: 768px) {
+  .slide-card .user-content {
+    flex-wrap: wrap;
+  }
+  .user-content {
+    top: 0;
+  }
+  .user-img {
+  }
+}
